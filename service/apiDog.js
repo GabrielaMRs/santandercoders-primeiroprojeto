@@ -12,7 +12,6 @@ async function searchDogs(amount){
     }
 }
 
-
 // Exemplo de como usar
 searchDogs(5).then(images => {
     images.forEach(image => {
