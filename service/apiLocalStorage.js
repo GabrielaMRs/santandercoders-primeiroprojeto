@@ -3,6 +3,38 @@ var chavePet = "pets"
 var chaveAtendimento = "atendimentos"
 
 
+// Função para criar objeto de cachorro
+function criarPet(tutor, telefone, nomeCachorro, raca, idade, perfume, apelido, porte, pelagem, observacao){
+    const pet = {
+        tutor: tutor,
+        telefoneTutor: telefone,
+        perfume: perfume,
+        nomeCachorro: nomeCachorro,
+        raca: raca,
+        idade: idade,
+        apelido: apelido,
+        porte: porte,
+        pelagem: pelagem,
+        observacao: observacao,
+    };
+    return pet;
+}
+
+// Função para criar objeto de atendimento
+function criarAtendimento(pet, servico, horario, funcionario, status, valor){
+    const atendimento = {
+        pet: pet,
+        nome: pet.nome,
+        raca: pet.raca,
+        servico: servico,
+        horario: horario,
+        funcionario: funcionario,
+        status: status,
+        valor: valor,
+    }
+    return atendimento;
+}
+
 // Função para gerar um ID único
 function gerarIdUnico() {
     return '_' + Math.random().toString(36).substr(2, 9);
