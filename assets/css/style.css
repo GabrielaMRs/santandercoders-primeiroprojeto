@@ -64,3 +64,8 @@ nav .container-fluid {
   justify-content: space-between;
   padding: 0 40px;
 }
+
+.main-cadastro-atendimento {
+  display: flex;
+  flex-direction: column;
+}
