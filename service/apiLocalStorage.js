@@ -99,3 +99,22 @@ function buscarAtendimento(id) {
     return atendimento
 }
 
+//Editar Cachorro para a pagina
+//mudar o caminho de acordo com a pagina de cadastro de cachorro
+function editarCachorro(cachorro) {
+    // Monta a URL com o parâmetro idCachorro
+    const url = `../cachorro/cadastro.html?idCachorro=${cachorro.id}`;
+    // Redireciona para a URL construída
+    window.location.href = url;
+}
+
+   // Função para obter os parâmetros da query string
+function obterValorParametroURL(nomeDoParametro) {
+    const urlParams = new URLSearchParams(window.location.search);
+    return urlParams.get(nomeDoParametro);
+}
+/*
+ exemplo de uso
+ const idCachorro = obterValorParametroURL('idCachorro');
+*/
+// Obtém o valor do parâmetro "nome"
