@@ -5,19 +5,19 @@ var chaveAtendimento = "atendimentos"
 
 // Função para criar objeto de cachorro
 function criarPet(tutor, telefone, nomeCachorro, raca, idade, perfume, apelido, porte, pelagem, observacao){
-  const pet = {
-      tutor: tutor,
-      telefoneTutor: telefone,
-      perfume: perfume,
-      nome: nomeCachorro,
-      raca: raca,
-      idade: idade,
-      apelido: apelido,
-      porte: porte,
-      pelagem: pelagem,
-      observacao: observacao,
-  };
-  return pet;
+    const pet = {
+        tutor: tutor,
+        telefoneTutor: telefone,
+        perfume: perfume,
+        nomeCachorro: nomeCachorro,
+        raca: raca,
+        idade: idade,
+        apelido: apelido,
+        porte: porte,
+        pelagem: pelagem,
+        observacao: observacao,
+    };
+    return pet;
 }
 
 // Função para criar objeto de atendimento
@@ -101,3 +101,22 @@ function buscarAtendimento(id) {
     return atendimento
 }
 
+//Editar Cachorro para a pagina
+//mudar o caminho de acordo com a pagina de cadastro de cachorro
+function editarCachorro(cachorro) {
+    // Monta a URL com o parâmetro idCachorro
+    const url = `../cachorro/cadastro.html?idCachorro=${cachorro.id}`;
+    // Redireciona para a URL construída
+    window.location.href = url;
+}
+
+   // Função para obter os parâmetros da query string
+function obterValorParametroURL(nomeDoParametro) {
+    const urlParams = new URLSearchParams(window.location.search);
+    return urlParams.get(nomeDoParametro);
+}
+/*
+ exemplo de uso
+ const idCachorro = obterValorParametroURL('idCachorro');
+*/
+// Obtém o valor do parâmetro "nome"
