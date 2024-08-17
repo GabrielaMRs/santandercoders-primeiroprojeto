@@ -21,18 +21,20 @@ function criarPet(tutor, telefone, nomeCachorro, raca, idade, perfume, apelido, 
 }
 
 // Função para criar objeto de atendimento
-function criarAtendimento(pet, servico, horario, funcionario, status, valor){
-    const atendimento = {
-        pet: pet,
-        nome: pet.nome,
-        raca: pet.raca,
-        servico: servico,
-        horario: horario,
-        funcionario: funcionario,
-        status: status,
-        valor: valor,
-    }
-    return atendimento;
+function criarAtendimento(petId, servico, horario, funcionario, status, valor){
+  const pet = buscarPet(petId);
+
+  const atendimento = {
+      pet: petId,
+      nome: pet.nome,
+      raca: pet.raca,
+      servico: servico,
+      horario: horario,
+      funcionario: funcionario,
+      status: status,
+      valor: valor,
+  }
+  return atendimento;
 }
 
 // Função para gerar um ID único
