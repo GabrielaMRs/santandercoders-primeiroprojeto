@@ -10,89 +10,129 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
   
     <title>Lista de Cachorros Cadastrados</title>
-</head>
-<body>
+  </head>
+  <body>
     <nav class="navbar navbar-expand-lg navbar-light">
-        <div class="container-fluid ">
-            <div class="logo-dogshop">
-              <a class="navbar-brand" href="#"> <img src="/assets/images/dog-svgrepo-com1.svg" alt="Logo do DogShop."> DogShop</a>
-              <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
-                  aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-                  <span class="navbar-toggler-icon"></span>
-              </button>
-            </div>
-            <div id="navbarNav">
-                <ul class="navbar-nav">
-                    <li class="nav-item">
-                        <a class="nav-link" aria-current="page" href="/index.html">Home</a>
-                    </li>
-                    <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                            Atendimentos
-                        </a>
-                        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                            <a class="dropdown-item" href="../cadastro_atendimento/cadastro_atendimento.html">Criar Atendimento</a>
-                            <a class="dropdown-item" href="../listagem_atendimentos/listagem_atendimento.html">Lista de Atendimentos</a>
-                        </div>
-                    </li>
-                    <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown2" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                            Cachorros
-                        </a>
-                        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                            <a class="dropdown-item" href="../cadastro_cachorro/cadastro_cachorro.html">Cadastrar Cachorro</a>
-                            <a class="dropdown-item" href="./listagem_cachorros.html">Lista de Cachorros</a>
-                        </div>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link secondary " href="#">Contato</a>
-                    </li>
-                </ul>
-            </div>
+      <div class="container-fluid">
+        <a class="navbar-brand" href="#">
+          <img
+            src="./assets/images/dog-svgrepo-com1.svg"
+            alt="Logo do DogShop."
+          />
+          DogShop
+        </a>
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#navbarNav"
+          aria-controls="navbarNav"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+          <ul class="navbar-nav">
+            <li class="nav-item">
+              <a class="nav-link active" aria-current="page" href="/index.html"
+                >Home</a
+              >
+            </li>
+            <li class="nav-item dropdown">
+              <a
+                class="nav-link dropdown-toggle"
+                href="#"
+                id="navbarDropdown"
+                role="button"
+                data-bs-toggle="dropdown"
+                aria-haspopup="true"
+                aria-expanded="false"
+              >
+                Atendimentos
+              </a>
+              <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                <a
+                  class="dropdown-item"
+                  href="./cadastro_atendimento/cadastro_atendimento.html"
+                  >Criar Atendimento</a
+                >
+                <a
+                  class="dropdown-item"
+                  href="./listagem_atendimentos/listagem_atendimento.html"
+                  >Lista de Atendimentos</a
+                >
+              </div>
+            </li>
+            <li class="nav-item dropdown">
+              <a
+                class="nav-link dropdown-toggle"
+                href="#"
+                id="navbarDropdown2"
+                role="button"
+                data-bs-toggle="dropdown"
+                aria-haspopup="true"
+                aria-expanded="false"
+              >
+                Cachorros
+              </a>
+              <div class="dropdown-menu" aria-labelledby="navbarDropdown2">
+                <a
+                  class="dropdown-item"
+                  href="./cadastro_cachorro/cadastro_cachorro.html"
+                  >Cadastrar Cachorro</a
+                >
+                <a
+                  class="dropdown-item"
+                  href="./listagem_chachorros/listagem_cachorros.html"
+                  >Lista de Cachorros</a
+                >
+              </div>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link secondary" href="#">Contato</a>
+            </li>
+          </ul>
         </div>
+      </div>
     </nav>
 
     <main>
-        <section class="m-5 mt-3">
-            <div class="mb-4">
-                <h2>
-                    Lista de cachorros cadastrados
-                </h2>
-            </div>
-            <div class="table-responsive">
-                <table class="table table-bordered">
-                    <thead>
-                      <tr>
-                        <th scope="col">Nome Cachorro</th>
-                        <th scope="col">Raça</th>
-                        <th scope="col">Apelido</th>
-                        <th scope="col">Data De Nascimento</th>
-                        <th scope="col">Perfume</th>
-                        <th scope="col">Porte</th>
-                        <th scope="col">Pelagem</th>
-                        <th scope="col">Tutor</th>
-                        <th scope="col">Telefone Tutor</th>
-                        <th scope="col">Observação</th>
-                        <th scope="col">Ação</th>
-                      </tr>
-                    </thead>
-                    <tbody id="table-body">
-                    </tbody>
-                  </table>
-            </div>
-        </section>
-        <div>
-           
+      <section class="m-5 mt-3">
+        <div class="mb-4">
+          <h2>Lista de cachorros cadastrados</h2>
         </div>
+        <div class="table-responsive">
+          <table class="table table-bordered">
+            <thead>
+              <tr>
+                <th scope="col">Nome Cachorro</th>
+                <th scope="col">Raça</th>
+                <th scope="col">Apelido</th>
+                <th scope="col">Data De Nascimento</th>
+                <th scope="col">Perfume</th>
+                <th scope="col">Porte</th>
+                <th scope="col">Pelagem</th>
+                <th scope="col">Tutor</th>
+                <th scope="col">Telefone Tutor</th>
+                <th scope="col">Observação</th>
+                <th scope="col">Ação</th>
+              </tr>
+            </thead>
+            <tbody id="table-body"></tbody>
+          </table>
+        </div>
+      </section>
+      <div></div>
     </main>
     <script src="../service/apiLocalStorage.js"></script>
     <script>
-        const tableBody = document.getElementById("table-body");
-        document.addEventListener("DOMContentLoaded", function() {
-            let pets = buscarPets();
-            if(pets.length > 0){
-                pets.forEach(pet => {
-                    tableBody.innerHTML += `
+      const tableBody = document.getElementById("table-body");
+      document.addEventListener("DOMContentLoaded", function () {
+        let pets = buscarPets();
+        if (pets.length > 0) {
+          pets.forEach((pet) => {
+            tableBody.innerHTML += `
                     <tr>
                                 <tr>
                                     <th scope="row">${pet.nome}</th>
@@ -108,10 +148,10 @@
                                     <th scope="row"><button type="button" class="btn btn-secondary" onclick="window.location.href='?pet=${pet.id}'">Editar</button></th>
                                 </tr>
                         </tr>
-                    `
-                })
-            }
-        });
+                    `;
+          });
+        }
+      });
     </script>
-</body>
+  </body>
 </html>
