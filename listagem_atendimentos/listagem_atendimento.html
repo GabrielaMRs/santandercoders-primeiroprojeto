@@ -114,7 +114,34 @@
     </nav>
   </header>
   <main>
-
+    <main>
+      <section class="m-5 mt-3">
+          <div class="mb-4">
+              <h2>
+                  Lista de Atendimento cadastrados
+              </h2>
+          </div>
+          <div class="table-responsive">
+              <table class="table table-bordered">
+                  <thead>
+                    <tr>
+                      <th scope="col">Nome Cachorro</th>
+                      <th scope="col">Raça</th>
+                      <th scope="col">Horario Atendimento</th>
+                      <th scope="col">Serviços</th>
+                      <th scope="col">Funcionario</th>
+                      <th scope="col">status</th>
+                      <th scope="col">Valor</th>
+                      <th scope="col">Ação</th>
+                    </tr>
+                  </thead>
+                  <tbody id="table-body">
+                  </tbody>
+                </table>
+          </div>
+      </section>
   </main>
+  <script src="../service/apiLocalStorage.js"></script>
+  <script src="listagem_atendimentos.js"></script>
 </body>
 </html>
