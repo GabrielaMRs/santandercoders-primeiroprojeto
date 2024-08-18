@@ -18,7 +18,7 @@ let pets = buscarPets();
 pets.forEach(p => {
   let opcao = document.createElement("option");
   opcao.value = p.id;
-  opcao.innerText = `${p.nomeCachorro} | ${p.raca}`;
+  opcao.innerText = `${p.nome} | ${p.raca}`;
   petLista.appendChild(opcao);
 });
 
@@ -88,6 +88,12 @@ function limparCampos(){
   petLista.value = "";
   horario.value = "";
   antendente.value = "";
+  banho.checked = false;
+  tosa.checked = false;
+  tosaHig.checked = false;
+  corte.checked = false;
+  servicos = [];
+  valor = 0;
 }
 
 function getDadosAtendimento(){

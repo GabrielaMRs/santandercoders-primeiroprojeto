@@ -95,12 +95,14 @@
     </main>
     <script src="../service/apiLocalStorage.js"></script>
     <script>
+
       const tableBody = document.getElementById("table-body");
       document.addEventListener("DOMContentLoaded", function () {
         let pets = buscarPets();
         if (pets.length > 0) {
           pets.forEach((pet) => {
             tableBody.innerHTML += `
+
                     <tr>
                                 <tr>
                                     <th scope="row">${pet.nome}</th>
