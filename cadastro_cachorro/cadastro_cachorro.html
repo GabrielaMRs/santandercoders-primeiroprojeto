@@ -29,18 +29,11 @@
   </head>
 
   <body>
-    <!-- 
-    Precisa verificar as cores: se vai ter cor de fundo, qual a cor do botão de cadastro
-    Puxar raças dos cachorros para o select
-    Adicionar input type calendar, sem bootstrap, se definirmos que vamos fazer dessa forma
-    Fazer a ligação do JS(criar obj cachorro e salvar)
-
-    -->
     <nav class="navbar navbar-expand-lg navbar-light">
       <div class="container-fluid">
-        <a class="navbar-brand" href="#">
+        <a class="navbar-brand" href="/index.html">
           <img
-            src="./assets/images/dog-svgrepo-com1.svg"
+            src="../assets/images/dog-svgrepo-com1.svg"
             alt="Logo do DogShop."
           />
           DogShop
@@ -68,7 +61,7 @@
               Atendimentos
             </a>
             <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-              <a class="dropdown-item" href="../cadastro_atendimento/cadastro_atendimento.html">Criar Atendimento</a>
+              <a class="dropdown-item" href="./cadastro_atendimento.html">Criar Atendimento</a>
               <a class="dropdown-item" href="../listagem_atendimentos/listagem_atendimento.html">Lista de
                 Atendimentos</a>
             </div>
@@ -125,7 +118,6 @@
             <label for="raca" class="form-label">Raça</label>
             <select class="form-select" id="raca">
               <option value="" disabled selected hidden>Selecione</option>
-              <!-- puxar raças da API -->
             </select>
           </div>
           <div class="mb-3 side30">
@@ -206,6 +198,6 @@
         })
       });
     </script>
-</body>
+  </body>
 
 </html>
