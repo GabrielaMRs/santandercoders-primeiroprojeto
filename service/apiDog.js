@@ -12,11 +12,17 @@ async function searchDogs(amount){
     }
 }
 
-// Exemplo de como usar
-searchDogs(5).then(images => {
-    images.forEach(image => {
-        console.log(image) // console log da url de cada imagem de cachorro
-    })
-})
+async function searchAllBreeds() {
+    const apiUrl = "https://dog.ceo/api/breeds/list/all";
+    try {
+        const response = await fetch(apiUrl);
+        if(response.ok){
+            const data = await response.json();
+            return(data.message);
+        }
+    } catch(error) {
+        return null;
+    }
+}
 
 

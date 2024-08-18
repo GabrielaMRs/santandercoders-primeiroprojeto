@@ -12,12 +12,13 @@ const tosa = document.getElementById("tosa");
 const tosaHig = document.getElementById("tosa-hig");
 const corte = document.getElementById("corte");
 const antendente = document.getElementById("antendente");
+const notify = document.getElementById("notify")
 
 let pets = buscarPets();
 pets.forEach(p => {
   let opcao = document.createElement("option");
   opcao.value = p.id;
-  opcao.innerText = `${p.nome} | ${p.raca}`;
+  opcao.innerText = `${p.nomeCachorro} | ${p.raca}`;
   petLista.appendChild(opcao);
 });
 
@@ -75,28 +76,54 @@ corte.addEventListener("change", function(event){
   }
 })
 
-function getDadosAtendimento(){
-  let valorData = 0;
-  if(document.getElementById("banho").checked){
-    valorData += valorBanho;
-    servicos.push(banho.value);
+function verificarCampos(){
+  if(horario.value != "" && antendente.value != "" && petLista.value != "" && valor > 0){
+    return true
   }
-  if(document.getElementById("tosa").checked){
-    valorData += valorTosa;
-    servicos.push(tosa.value)
-  }
-  if(document.getElementById("tosa-hig").checked){
-    valorData += valorTosaHig;
-    servicos.push(tosaHig.value)
-  }
-  if(document.getElementById("corte").checked){
-    valorData += valorCorte;
-    servicos.push(corte.value)
-  }
+  return false;
+}
 
-  const atendimento = criarAtendimento(petLista.value, servicos, horario.value, antendente.value, "Em espera", valorData);
-  salvarAtendimento(atendimento);
-  console.log(JSON.parse(localStorage.getItem("atendimentos")));
-  valorData = 0;
+function limparCampos(){
+  notify.innerHTML = "";
+  petLista.value = "";
+  horario.value = "";
+  antendente.value = "";
+}
+
+function getDadosAtendimento(){
+  notify.innerHTML = "";
+  if(verificarCampos()){
+      let valorData = 0;
+      if(document.getElementById("banho").checked){
+        valorData += valorBanho;
+        servicos.push(banho.value);
+      }
+      if(document.getElementById("tosa").checked){
+        valorData += valorTosa;
+        servicos.push(tosa.value)
+      }
+      if(document.getElementById("tosa-hig").checked){
+        valorData += valorTosaHig;
+        servicos.push(tosaHig.value)
+      }
+      if(document.getElementById("corte").checked){
+        valorData += valorCorte;
+        servicos.push(corte.value)
+      }
+
+      const atendimento = criarAtendimento(petLista.value, servicos, horario.value, antendente.value, "Em espera", valorData);
+      salvarAtendimento(atendimento);
+      const success = document.createElement("p");
+      limparCampos();
+      success.innerText = "Atendimento Cadastrado Com Sucesso";
+      success.style.color = "green";
+      notify.appendChild(success);
+      valorData = 0;
+  } else {
+      const error = document.createElement("p")
+      error.innerText = "Preencha Todos Os Campos";
+      error.style.color = "red";
+      notify.append(error);
+  }
 }
 

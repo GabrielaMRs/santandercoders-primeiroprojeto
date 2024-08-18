@@ -74,7 +74,7 @@
   </nav>
   <main class="main-cadastro-cachorro">
     <section>
-      <h1>Cadastrar novo Cachorro</h1>
+      <h1>Cadastrar Novo Cachorro</h1>
       <div class="container-lg">
         <label class="title-info-tutor"><strong>Informações do tutor</strong></label>
         <div class="info-tutor">
@@ -104,32 +104,34 @@
           <div class="mb-3 side30">
             <label for="raca" class="form-label">Raça</label>
             <select class="form-select" id="raca">
-              <option selected>Selecione</option>
+              <option value="" disabled selected hidden>Selecione</option>
               <!-- puxar raças da API -->
-              <option value="1">One</option>
-              <option value="2">Two</option>
             </select>
           </div>
           <div class="mb-3 side30">
             <label for="porte" class="form-label">Porte</label>
             <select class="form-select" id="porte">
-              <option selected>Selecione</option>
-              <option value="1">Pequeno</option>
-              <option value="2">Médio</option>
-              <option value="3">Grande</option>
-              <option value="4">Gigante</option>
+              <option value="" disabled selected hidden>Selecione</option>
+              <option value="Pequeno">Pequeno</option>
+              <option value="Médio">Médio</option>
+              <option value="Grande">Grande</option>
+              <option value="Gigante">Gigante</option>
             </select>
           </div>
           <div class="mb-3 side30">
             <label for="pelagem" class="form-label">Pelagem</label>
             <select class="form-select" id="pelagem">
-              <option selected>Selecione</option>
-              <option value="1">Pelagem curta</option>
-              <option value="2">Pelagem longa</option>
-              <option value="3">Pelagem encaracolada</option>
-              <option value="4">Pelagem dupla</option>
-              <option value="5">Pelagem longa e curta</option>
+              <option value="" disabled selected hidden>Selecione</option>
+              <option value="Pelagem Curta">Pelagem Curta</option>
+              <option value="Pelagem Longa">Pelagem Longa</option>
+              <option value="Pelagem Encaracolada">Pelagem Encaracolada</option>
+              <option value="Pelagem Dupla">Pelagem Dupla</option>
+              <option value="Pelagem Longa e curta">Pelagem Longa e curta</option>
             </select>
+          </div>
+          <div class="mb-3 side30">
+            <label for="dataNascimento" class="form-label">Data de Nascimento</label>
+            <input type="date" class="form-control" id="dataNascimento" />
           </div>
         </div>
         <div class="infos-adicionais">
@@ -141,29 +143,49 @@
           </div>
           <div class="perfume">
             <label class="mb-2">Pode colocar perfume?</label>
-            <div class="form-check">
-              <input class="form-check-input" type="radio" name="perfume" id="semPerfume" />
-              <label class="form-check-label" for="semPerfume">
-                Pode colocar
-              </label>
-            </div>
-            <div class="form-check">
-              <input class="form-check-input" type="radio" name="perfume" id="comPerfume" />
-              <label class="form-check-label" for="comPerfume"> Não colocar </label>
-            </div>
+            <select class="form-select" id="perfume">
+              <option value="" disabled selected hidden>Selecione</option>
+              <option value="Sim">Sim</option>
+              <option value="Não">Não</option>
+            </select>
           </div>
         </div>
 
-        <button type="submit" class="cadastrar-novo-cachorro" id="submitCachorro">
+        <button type="submit" class="cadastrar-novo-cachorro" id="submitCachorro" onclick="cadastrarCachorro()">
           Cadastrar Cachorro
         </button>
-
+        <div id="notify"></div>
       </div>
     </section>
   </main>
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
     integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
     crossorigin="anonymous"></script>
+    <script src="../service/apiDog.js"></script>
+    <script src="../service/apiLocalStorage.js"></script>
+    <script src="./cadastro_cachorro.js"></script>
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+        searchAllBreeds().then(racas => {
+          const racaTag = document.getElementById("raca");
+          for (let raca in racas){
+            if(racas[raca].length > 0){
+              racas[raca].forEach(subRaca => {
+                const option = document.createElement("option");
+                option.value = subRaca;
+                option.textContent = subRaca;
+                racaTag.appendChild(option);
+              })
+            } else {
+              const option = document.createElement("option");
+                option.value = raca;
+                option.textContent = raca;
+                racaTag.appendChild(option);
+            }
+          }
+        })
+      });
+    </script>
 </body>
 
 </html>
