@@ -132,4 +132,3 @@ function getDadosAtendimento(){
       notify.append(error);
   }
 }
-
