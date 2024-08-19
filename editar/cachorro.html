@@ -25,7 +25,7 @@
       crossorigin="anonymous"
     ></script>
 
-    <title>Cadastro de Cachorro</title>
+    <title>Edição de Cachorro</title>
   </head>
 
   <body>
@@ -61,9 +61,8 @@
               Atendimentos
             </a>
             <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-              <a class="dropdown-item" href="./cadastro_atendimento.html">Criar Atendimento</a>
-              <a class="dropdown-item" href="../listagem_atendimentos/listagem_atendimento.html">Lista de
-                Atendimentos</a>
+              <a class="dropdown-item" href="../cadastrar/atendimento.html">Criar Atendimento</a>
+              <a class="dropdown-item" href="../listar/atendimento.html">Lista de Atendimentos</a>
             </div>
           </li>
           <li class="nav-item dropdown">
@@ -72,8 +71,8 @@
               Cachorros
             </a>
             <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-              <a class="dropdown-item" href="../cadastro_cachorro/cadastro_cachorro.html">Cadastrar Cachorro</a>
-              <a class="dropdown-item" href="../listagem_chachorros/listagem_cachorros.html">Lista de Cachorros</a>
+              <a class="dropdown-item" href="../cadastrar/cachorro.html">Cadastrar Cachorro</a>
+              <a class="dropdown-item" href="../listar/cachorro.html">Lista de Cachorros</a>
             </div>
           </li>
           <li class="nav-item">
@@ -85,7 +84,7 @@
   </nav>
   <main class="main-cadastro-cachorro">
     <section>
-      <h1>Cadastrar Novo Cachorro</h1>
+      <h1>Editar Cachorro</h1>
       <div class="container-lg">
         <label class="title-info-tutor"><strong>Informações do tutor</strong></label>
         <div class="info-tutor">
@@ -163,8 +162,8 @@
           </div>
         </div>
 
-        <button type="submit" class="cadastrar-novo-cachorro" id="submitCachorro" onclick="cadastrarCachorro()">
-          Cadastrar Cachorro
+        <button type="submit" class="cadastrar-novo-cachorro" id="submitCachorro" onclick="editarCachorro()">
+          Editar Cachorro
         </button>
         <div id="notify"></div>
       </div>
@@ -175,7 +174,7 @@
     crossorigin="anonymous"></script>
     <script src="../service/apiDog.js"></script>
     <script src="../service/apiLocalStorage.js"></script>
-    <script src="./cadastro_cachorro.js"></script>
+    <script src="./cachorro.js"></script>
     <script>
         document.addEventListener("DOMContentLoaded", function () {
         searchAllBreeds().then(racas => {
@@ -195,7 +194,10 @@
                 racaTag.appendChild(option);
             }
           }
-        })
+        });
+
+        recuperarCachorro();
+
       });
     </script>
   </body>
