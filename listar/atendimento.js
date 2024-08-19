@@ -1,8 +1,8 @@
 const tableBody = document.getElementById("table-body");
-document.addEventListener("DOMContentLoaded", function () {
+document.addEventListener("DOMContentLoaded", function() {
   let atendimentos = buscarAtendimentos();
-  if (atendimentos.length > 0) {
-    atendimentos.forEach((atendimento) => {
+  if(atendimentos.length > 0){
+    atendimentos.forEach(atendimento => {
       tableBody.innerHTML += `
       <tr>
         <tr>
@@ -16,10 +16,10 @@ document.addEventListener("DOMContentLoaded", function () {
             <th scope="row">${atendimento.funcionario}</th>
             <th scope="row">${atendimento.status}</th>
             <th scope="row">${atendimento.valor}</th>
-            <th scope="row"><button type="button" class="btn btn-secondary" onclick="window.location.href='?pet=${atendimento.id}'">Editar</button></th>
+            <th scope="row"><button type="button" class="btn btn-secondary" onclick="window.location.href='../editar/atendimento.html?atendimento=${atendimento.id}'">Editar</button></th>
         </tr>
       </tr>
-      `;
-    });
+      `
+    })
   }
 });
