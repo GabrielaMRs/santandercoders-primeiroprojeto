@@ -16,7 +16,7 @@ document.addEventListener("DOMContentLoaded", function () {
             <th scope="row">${pet.tutor}</th>
             <th scope="row">${pet.telefoneTutor}</th>
             <th scope="row">${pet.observacao}</th>
-            <th scope="row"><button type="button" class="btn btn-secondary" onclick="window.location.href='?pet=${pet.id}'">Editar</button></th>
+            <th scope="row"><button type="button" class="btn btn-secondary" onclick="window.location.href='../editar/cachorro.html?pet=${pet.id}'">Editar</button></th>
           </tr>
         </tr>
       `;
