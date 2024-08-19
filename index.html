@@ -4,115 +4,88 @@
     <meta charset="UTF-8" />
     <link rel="stylesheet" href="../assets/css/style.css" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link
-      rel="stylesheet"
-      href="https://cdn.jsdelivr.net/npm/reset-css@5.0.2/reset.min.css"
-    />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reset-css@5.0.2/reset.min.css" />
     <link
       href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
       rel="stylesheet"
       integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH"
-      crossorigin="anonymous"
-    />
+      crossorigin="anonymous" />
     <script
       src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
       integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
-      crossorigin="anonymous"
-    ></script>
+      crossorigin="anonymous"></script>
     <script
       src="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/js/bootstrap.min.js"
       integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
-      crossorigin="anonymous"
-    ></script>
+      crossorigin="anonymous"></script>
 
     <title>Home</title>
   </head>
   <body>
-    <nav class="navbar navbar-expand-lg navbar-light">
-      <div class="container-fluid">
-        <a class="navbar-brand" href="#">
-          <img
-            src="./assets/images/dog-svgrepo-com1.svg"
-            alt="Logo do DogShop."
-          />
-          DogShop
-        </a>
-        <button
-          class="navbar-toggler"
-          type="button"
-          data-bs-toggle="collapse"
-          data-bs-target="#navbarNav"
-          aria-controls="navbarNav"
-          aria-expanded="false"
-          aria-label="Toggle navigation"
-        >
-          <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="collapse navbar-collapse" id="navbarNav">
-          <ul class="navbar-nav">
-            <li class="nav-item">
-              <a class="nav-link active" aria-current="page" href="/index.html"
-                >Home</a
-              >
-            </li>
-            <li class="nav-item dropdown">
-              <a
-                class="nav-link dropdown-toggle"
-                href="#"
-                id="navbarDropdown"
-                role="button"
-                data-bs-toggle="dropdown"
-                aria-haspopup="true"
-                aria-expanded="false"
-              >
-                Atendimentos
-              </a>
-              <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+    <header>
+      <nav class="navbar navbar-expand-lg navbar-light">
+        <div class="container-fluid">
+          <a class="navbar-brand" href="#">
+            <img src="./assets/images/dog-svgrepo-com1.svg" alt="Logo do DogShop." />
+            DogShop
+          </a>
+          <button
+            class="navbar-toggler"
+            type="button"
+            data-bs-toggle="collapse"
+            data-bs-target="#navbarNav"
+            aria-controls="navbarNav"
+            aria-expanded="false"
+            aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav">
+              <li class="nav-item">
+                <a class="nav-link active" aria-current="page" href="/index.html">Home</a>
+              </li>
+              <li class="nav-item dropdown">
                 <a
-                  class="dropdown-item"
-                  href="./cadastro_atendimento/cadastro_atendimento.html"
-                  >Criar Atendimento</a
-                >
+                  class="nav-link dropdown-toggle"
+                  href="#"
+                  id="navbarDropdown"
+                  role="button"
+                  data-bs-toggle="dropdown"
+                  aria-haspopup="true"
+                  aria-expanded="false">
+                  Atendimentos
+                </a>
+                <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                  <a class="dropdown-item" href="cadastrar/atendimento.html"
+                    >Cadastrar Atendimento</a
+                  >
+                  <a class="dropdown-item" href="listar/atendimento.html">Lista de Atendimentos</a>
+                </div>
+              </li>
+              <li class="nav-item dropdown">
                 <a
-                  class="dropdown-item"
-                  href="./listagem_atendimentos/listagem_atendimento.html"
-                  >Lista de Atendimentos</a
-                >
-              </div>
-            </li>
-            <li class="nav-item dropdown">
-              <a
-                class="nav-link dropdown-toggle"
-                href="#"
-                id="navbarDropdown2"
-                role="button"
-                data-bs-toggle="dropdown"
-                aria-haspopup="true"
-                aria-expanded="false"
-              >
-                Cachorros
-              </a>
-              <div class="dropdown-menu" aria-labelledby="navbarDropdown2">
-                <a
-                  class="dropdown-item"
-                  href="./cadastro_cachorro/cadastro_cachorro.html"
-                  >Cadastrar Cachorro</a
-                >
-                <a
-                  class="dropdown-item"
-                  href="./listagem_chachorros/listagem_cachorros.html"
-                  >Lista de Cachorros</a
-                >
-              </div>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link secondary" href="#">Contato</a>
-            </li>
-          </ul>
+                  class="nav-link dropdown-toggle"
+                  href="#"
+                  id="navbarDropdown2"
+                  role="button"
+                  data-bs-toggle="dropdown"
+                  aria-haspopup="true"
+                  aria-expanded="false">
+                  Cachorros
+                </a>
+                <div class="dropdown-menu" aria-labelledby="navbarDropdown2">
+                  <a class="dropdown-item" href="cadastrar/cachorro.html">Cadastrar Cachorro</a>
+                  <a class="dropdown-item" href="listar/cachorro.html">Lista de Cachorros</a>
+                </div>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link secondary" href="#">Contato</a>
+              </li>
+            </ul>
+          </div>
         </div>
-      </div>
-    </nav>
-
+      </nav>
+    </header>
     <main>
       <section>
         <article class="home-bem-vindo">
@@ -121,20 +94,18 @@
           </head>
           <main class="home-principal">
             <p>
-              A DogShop é o lugar perfeito para encontrar tudo o que seu melhor
-              amigo peludo precisa! Desde ração de alta qualidade até
-              brinquedos, acessórios e cuidados especiais, estamos aqui para
-              tornar a vida do seu cão ainda mais feliz. Navegue por nossa
-              seleção e descubra produtos que farão seu cãozinho balançar o rabo
-              de alegria. Aproveite também nossas ofertas exclusivas e confira
-              as novidades que acabaram de chegar. Obrigado por escolher a
-              DogShop, onde a felicidade do seu cão é a nossa maior prioridade!
+              A DogShop é o lugar perfeito para encontrar tudo o que seu melhor amigo peludo
+              precisa! Desde ração de alta qualidade até brinquedos, acessórios e cuidados
+              especiais, estamos aqui para tornar a vida do seu cão ainda mais feliz. Navegue por
+              nossa seleção e descubra produtos que farão seu cãozinho balançar o rabo de alegria.
+              Aproveite também nossas ofertas exclusivas e confira as novidades que acabaram de
+              chegar. Obrigado por escolher a DogShop, onde a felicidade do seu cão é a nossa maior
+              prioridade!
             </p>
             <img
               src="./assets/images/petshop-rock-1024x538.png.webp"
               alt="Cachorro de óculos em frente a um notebook."
-              width="500"
-            />
+              width="500" />
           </main>
         </article>
       </section>
@@ -160,7 +131,6 @@
     <script
       src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
       integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
-      crossorigin="anonymous"
-    ></script>
+      crossorigin="anonymous"></script>
   </body>
 </html>

@@ -56,8 +56,8 @@
                   Atendimentos
                 </a>
                 <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                  <a class="dropdown-item" href="../cadastro_atendimento/cadastro_atendimento.html"
-                    >Criar Atendimento</a
+                  <a class="dropdown-item" href="../cadastrar/atendimento.html"
+                    >Cadastrar Atendimento</a
                   >
                   <a class="dropdown-item" href="../listar/atendimento.html"
                     >Lista de Atendimentos</a
@@ -76,12 +76,8 @@
                   Cachorros
                 </a>
                 <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                  <a class="dropdown-item" href="../cadastro_cachorro/cachorro.html"
-                    >Cadastrar Cachorro</a
-                  >
-                  <a class="dropdown-item" href="../listar/cachorro.html"
-                    >Lista de Cachorros</a
-                  >
+                  <a class="dropdown-item" href="../cadastrar/cachorro.html">Cadastrar Cachorro</a>
+                  <a class="dropdown-item" href="../listar/cachorro.html">Lista de Cachorros</a>
                 </div>
               </li>
               <li class="nav-item">
@@ -185,27 +181,5 @@
     <script src="../service/apiDog.js"></script>
     <script src="../service/apiLocalStorage.js"></script>
     <script src="cachorro.js"></script>
-    <script>
-      document.addEventListener("DOMContentLoaded", function () {
-        searchAllBreeds().then((racas) => {
-          const racaTag = document.getElementById("raca");
-          for (let raca in racas) {
-            if (racas[raca].length > 0) {
-              racas[raca].forEach((subRaca) => {
-                const option = document.createElement("option");
-                option.value = subRaca;
-                option.textContent = subRaca;
-                racaTag.appendChild(option);
-              });
-            } else {
-              const option = document.createElement("option");
-              option.value = raca;
-              option.textContent = raca;
-              racaTag.appendChild(option);
-            }
-          }
-        });
-      });
-    </script>
   </body>
 </html>

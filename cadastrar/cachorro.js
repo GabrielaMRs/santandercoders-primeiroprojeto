@@ -66,3 +66,24 @@ function cadastrarCachorro() {
     notify.append(error);
   }
 }
+
+document.addEventListener("DOMContentLoaded", function () {
+  searchAllBreeds().then((racas) => {
+    const racaTag = document.getElementById("raca");
+    for (let raca in racas) {
+      if (racas[raca].length > 0) {
+        racas[raca].forEach((subRaca) => {
+          const option = document.createElement("option");
+          option.value = subRaca;
+          option.textContent = subRaca;
+          racaTag.appendChild(option);
+        });
+      } else {
+        const option = document.createElement("option");
+        option.value = raca;
+        option.textContent = raca;
+        racaTag.appendChild(option);
+      }
+    }
+  });
+});
